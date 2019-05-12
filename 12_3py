@@ -1,0 +1,13 @@
+import urllib.request, urllib.parse, urllib.error
+
+url = input("Enter url - ")
+fhandle = urllib.request.urlopen(url)
+count = 0
+for line in fhandle:
+    count += len(line)
+    if len(line) < 1:
+        break
+    if count < 3000:
+        print(line.decode().strip())
+
+print(count)
